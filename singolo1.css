@@ -66,9 +66,7 @@ h1{
     position: relative;
     top:-1px;
     left:-5px;
-    /* padding:2px 0 0 0 ; */
-    /* letter-spacing: -0.5px; */
-    /* font-stretch:ultra-condensed;  */
+
     transform:scaleX(0.919);
     
 }
@@ -87,7 +85,15 @@ span.logo-colored{
 }
 .nav-elements{
     list-style-type: none;
-
+}
+.nav-elements:before{
+    color:var(--nav_doter_color);
+    content:"·";
+    padding-right: 13px;
+    
+}
+.nav-elements:first-child:before{
+    display: none;
 }
 
 .nav-element{
@@ -102,23 +108,16 @@ span.logo-colored{
  
 }
 
-.nav-elements.nav-element{
-    color:var(--nav_doter_color);
-}
 .nav-element.current-page{
     color: #f06c64;
 }
 a.nav-element{
     display:inline-block;
-
-    /* transform:scaleX(0.97); */
 }
 a.nav-element:hover{
     color: #f06c64;
 }
 
-
-/* slider  */
 
 .slider-box{
     display:flex;
@@ -161,11 +160,6 @@ a.nav-element:hover{
     position: absolute;
     top:53px;
     left:12px;
-    /* background:blue; */
-    /* background:  
-    url("./assets/Base-iphone.png") no-repeat ,
-    url("./assets/Layer5.png") no-repeat 15px 125px,
-    url("./assets/ShadowH.png") no-repeat 160px 125px; */
 
 }
 
@@ -173,8 +167,6 @@ a.nav-element:hover{
     width: inherit;
     height: inherit; 
     position: absolute;
-    /* top:inherit;
-    left:inherit; */
     display:inline-block;
     background:url("./assets/Base-iphone.png") no-repeat;
 }
@@ -183,8 +175,6 @@ a.nav-element:hover{
     height: inherit; 
     display:inline-block;
     position: absolute;
-    /* top:inherit;
-    left:inherit; */
     background:url("./assets/ShadowV.png") no-repeat 0px 0px;
 }
 .iphone-vertical .iphone-screen{
@@ -204,7 +194,6 @@ a.nav-element:hover{
     position: absolute;
     top:52px;
     left:447px;
-    /* background:blue; */
     transform: rotate(90deg );
 }
 
@@ -213,8 +202,6 @@ a.nav-element:hover{
     width: inherit;
     height: inherit; 
     position: absolute;
-    /* top:inherit;
-    left:inherit; */
     display:inline-block;
     background:url("./assets/Base-iphone.png") no-repeat 0px 26px;
     
@@ -224,8 +211,6 @@ a.nav-element:hover{
     height: inherit; 
     display:inline-block;
     position: absolute;
-    /* top:inherit;
-    left:inherit; */
     background:url("./assets/ShadowV.png") no-repeat 0px 1px;
     transform: rotate(90deg );
     transform: scale(1,-1)
@@ -233,7 +218,6 @@ a.nav-element:hover{
 .iphone-horizontal .iphone-screen{
     width:188px;
     height:333px;
-    /* transform: rotate(-90deg ); */
     position: absolute;
     top:91px;
     left:14px;
@@ -249,15 +233,10 @@ color: #666d89;
 font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
 font-weight: 900;
 text-align: left;
-/* margin: 0 0 0; */
-/* letter-spacing: -0.2px; */
-/* transform:scaleX(0.919); */
 }
 
 
 .servises-text{
-/* width: 940px;
-height: 57px; */
 margin: 23px 0 0 0;
 font-size: 1.8rem;
 line-height: 29px;
@@ -307,8 +286,8 @@ letter-spacing: -0.161px;
     font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     font-weight: 900;
     text-align: left;
-    /* letter-spacing: -0.1px; */
 }
+
 .column-text{
 font-size: 1.1rem;
 line-height: 22px;
