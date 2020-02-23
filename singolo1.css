@@ -1,3 +1,6 @@
+@import url("./assets/fonts/lato/lato.css") ;
+
+
 :root {
     --logo-snow-color: #f06c64;
     --lososeviy_color: #f06c64;
@@ -15,7 +18,7 @@ html{
 }
 
 body{
-    font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     background-color: var(--lososeviy_cvet);
 }
 
@@ -57,11 +60,11 @@ h1{
     font-size: 2.6rem;
     line-height: normal;
     color: #ffffff;
-    font-family: "Lato";
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     font-weight: 700;
     text-align: left;
     position: relative;
-    top:2px;
+    top:-1px;
     left:-5px;
     /* padding:2px 0 0 0 ; */
     /* letter-spacing: -0.5px; */
@@ -70,12 +73,12 @@ h1{
     
 }
 
-span.logo{
+span.logo-colored{
     color: var(--logo-snow-color);
 }
 
 .header-navigation{
-    padding: 12px 0 0 0 ;
+    padding: 9px 0 0 0 ;
 }
 .navigation-list{
     display: flex;
@@ -91,15 +94,19 @@ span.logo{
     font-size: 1.2rem;
     line-height: 6px;
     color: #ffffff;
-    font-family: "Lato";
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     font-weight: 400;
     text-align: justify;
     text-decoration: none;
+    transform:scaleY(0.919);
  
 }
 
 .nav-elements.nav-element{
     color:var(--nav_doter_color);
+}
+.nav-element.current-page{
+    color: #f06c64;
 }
 a.nav-element{
     display:inline-block;
@@ -121,11 +128,11 @@ a.nav-element:hover{
     height: 594px;
 }
 .slider-left{
-    padding: 0px 0px 2px 2px;
+    padding: 0px 0px 4px 2px;
 }
 .slider-right{
     transform:scaleX(-1);
-    padding: 0px 2px 2px 0px;
+    padding: 0px 2px 4px 0px;
 }
 .iphone-box {
     flex-grow: 1;
@@ -134,9 +141,9 @@ a.nav-element:hover{
 .slider-right:hover
 {
     cursor:pointer;
-    /* background: black; */
-/* text-decoration: underline; */
-color:yellow;
+    border-radius 10px;
+    /* background: yellow; */
+
 }
 
 
@@ -199,8 +206,6 @@ color:yellow;
     top:52px;
     left:447px;
     /* background:blue; */
-  
-
     transform: rotate(90deg );
 }
 
@@ -242,11 +247,11 @@ color:yellow;
     font-size: 3rem;
 line-height: 30px;
 color: #666d89;
-font-family: "Lato";
+font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
 font-weight: 900;
 text-align: left;
 /* margin: 0 0 0; */
-letter-spacing: -0.2px;
+/* letter-spacing: -0.2px; */
 /* transform:scaleX(0.919); */
 }
 
@@ -256,18 +261,19 @@ letter-spacing: -0.2px;
 height: 57px; */
 margin: 23px 0 0 0;
 font-size: 1.8rem;
-line-height: 30px;
+line-height: 29px;
 color: #767e9e;
-font-family: "Lato";
-font-weight: 300;
+font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+font-weight: 400;
 text-align: left;
+letter-spacing: -0.161px;
 }
 .content-columg{
     height:110px;
 }
 
 .layout-3-column{
-    margin-top:43px;
+    margin-top:45px;
     display: grid;
     grid-template-columns:repeat(3, 1fr);
     grid-gap:13px 18px;
@@ -296,24 +302,29 @@ text-align: left;
 .services-column-head{
     display:inline-block;
     vertical-align: top;
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 18px;
     color: #666d89;
-    font-family: "Lato";
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     font-weight: 900;
     text-align: left;
-
-    letter-spacing: -0.1px;
+    /* letter-spacing: -0.1px; */
 }
 .column-text{
-
-font-size: 12px;
+font-size: 1.1rem;
 line-height: 22px;
 color: #767e9e;
-font-family: "Lato";
-font-weight: 400;
+font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+font-weight: 700;
 text-align: justify;
 margin-top: 10px;
+letter-spacing: 0.26px;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+-moz-webkit-box-orient: vertical;
 }
 
 .content-columg:nth-child(3n)>.column-text-wrapper{
