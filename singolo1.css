@@ -129,10 +129,18 @@ a.nav-element:hover{
 }
 .iphone-box {
     flex-grow: 1;
-   
-
-
 }
+.slider-left:hover,
+.slider-right:hover
+{
+    cursor:pointer;
+    /* background: black; */
+/* text-decoration: underline; */
+color:yellow;
+}
+
+
+
 .iphone-wrapper{
     position: relative;
     width: 820px ;
