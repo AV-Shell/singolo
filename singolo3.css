@@ -4,9 +4,11 @@
 :root {
     --get-a-quote-border-color: #ea676b;
     --get-a-quote-background-color: #f06c64;
+    --get-a-quote-input-color: #d6564f;
     --get-a-quote-title-color: #f0d8d9;
     --get-a-quote-text-color:  #f0d8d9;
     --active-color:#f06c64;
+    --form-placeholder-color:#f48c8f;
     --footer-background-color: #2d303a;
     --copyright-text-color:#666d89;
     --socials-border-color:#666d89;
@@ -59,22 +61,22 @@ body{
     color: #767e9e;
     font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
     font-weight: 300;
-    text-align: left;
+    text-align: justify;
 }
 
 .get-a-quote__title{
     color: var( --get-a-quote-title-color);
     box-sizing: border-box;
-    letter-spacing: 0.2px;
+    letter-spacing: -0.1px;
     height:110px;
-    padding: 63px 0px 0px 0px;
+    padding: 62px 0px 0px 0px;
 }
 .get-a-quote__text{
     color: var( --get-a-quote-title-color);
     box-sizing: border-box;
-    height:30px;
-    padding: 4px 0px 0px 0px;
-    letter-spacing: -0.2px;
+    height:102px;
+    padding: 3px 0px 0px 0px;
+    letter-spacing: -0.21px;
     line-height: 30px;
 }
 
@@ -82,6 +84,7 @@ body{
      margin-top: 5px;
      height:431px;
      display:grid;
+     grid-template-columns: 1fr 1fr 1fr;
      grid-template-areas: "w w c";
      grid-gap:20px;
      overflow: hidden;
@@ -92,4 +95,198 @@ body{
 }
 .get-a-quote__contacts-information{
     grid-area:  c;
+}
+
+.get-a-quote__input{
+    width:619px;
+    height: 38px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding: 0px 0px 1px 10px;
+}
+
+
+.get-a-quote__textarea{
+    width:619px;
+    height: 202px;
+    box-sizing: border-box;
+    resize:none;
+    margin-bottom: 16px;
+    padding: 2px 0px 0px 10px;
+}
+
+
+.get-a-quote__input, .get-a-quote__textarea
+{
+
+    background-color: var(--get-a-quote-input-color);
+    border-radius:5px;
+    border:5px solid  var(--get-a-quote-input-color);
+}
+.get-a-quote__input:focus:invalid{
+    border:5px solid red;
+    /* color:red;
+    background-color: blue; */
+}
+
+.form-text{
+font-size: 12px;
+line-height: 22px;
+color: var( --get-a-quote-title-color);
+font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+font-weight: 400;
+text-align: justify;
+}
+input::placeholder,
+textarea::placeholder{
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    color: var(--form-placeholder-color);
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+    font-weight: 400;
+    text-align: justify;
+}
+ 
+.get-a-quote__submit-button{
+    width:619px;
+    height: 38px;
+    box-sizing: border-box;
+    background-color: var(--get-a-quote-input-color);
+    border-radius:5px;
+
+    font-size: 3rem;
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+    font-weight: 900;
+    color: var( --get-a-quote-title-color);
+}
+
+
+.subtitle{
+    font-size: 18px;
+    height:18px;
+    line-height: 18px;
+    color: var(--section-title-color);
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+    font-weight: 900;
+
+    text-align: justify;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.get-a-quote-title{
+    margin-top: 0px;
+    color: var( --get-a-quote-title-color);
+    letter-spacing: 0.1px;
+}
+
+.subtitle-text{
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    color: var(--get-a-quote-title-color);
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    
+}
+
+.get-a-quote-text{
+color: var(--get-a-quote-title-color);
+    margin-top: 10px;
+    width: 300px;
+    height: 105px;
+    letter-spacing: -0.2px;
+}
+.get-a-quote__contact{
+    display:block;
+    line-height: 1.2rem;
+    letter-spacing: -0.2px;
+    text-decoration: none;
+}
+
+.get-a-quote__contacts-container{
+    padding-top:8px;
+}
+
+.get-a-quote__contact_map{
+    background: url(./assets/img/GetAQuite/location.svg) no-repeat 3px 0px;
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 9px;
+   
+}
+
+
+.get-a-quote__contact_tel{
+    background:  url(./assets/img/GetAQuite/phone.svg) no-repeat 1px 0px;
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 10px;
+}
+
+
+.get-a-quote__contact_email{
+    background: url(./assets/img/GetAQuite/mail.svg) no-repeat 0px 3px;
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 1px;
+}
+.get-a-quote__contact:hover{
+    cursor:pointer;
+    /* color  :var(--active-color); */
+    color:white
+}
+/* .get-a-quote__contact_map::before{
+    content: url(./assets/img/GetAQuite/location.svg);
+    padding: 0px 20px 0px 0px;
+    width: 20px;
+}
+
+ .get-a-quote__contact_tel::before{
+     content: url(./assets/img/GetAQuite/phone.svg);
+     width: 20px;
+     padding: 0px 20px 0px 0px;
+}
+.get-a-quote__contact_email::before{
+    content: url(./assets/img/GetAQuite/mail.svg);
+    width: 20px;
+    padding: 0px 20px 0px 0px;
+} */
+
+.singolo-footer__copyright{
+    font-size: 12px;
+    line-height: 6px;
+    color: #666d89;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: justify;
+    letter-spacing: -0.2px;
+}
+
+
+.socials-container{
+    width:152px;
+    height:32px;
+    display: flex;
+    justify-content: space-between;
+}
+.social-ico-facebook{background:url("./assets/img/Socials/facebook.svg") no-repeat 50%;}
+.social-ico-g-plus{background:url("./assets/img/Socials/google+.svg") no-repeat 50%;}
+.social-ico-twitter{background:url("./assets/img/Socials/twitter.svg") no-repeat 50%;}
+.social-ico-linkedin{background:url("./assets/img/Socials/linkedin.svg") no-repeat 50%;}
+
+.singolo-footer__social-ico:hover
+{
+    cursor:pointer;
+    border:solid 4px #f06c64;
+}
+
+.singolo-footer__social-ico{
+    box-sizing: border-box;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    border:solid 1px var(--socials-border-color);
+}
+.singolo-footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
 }
