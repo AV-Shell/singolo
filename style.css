@@ -166,7 +166,7 @@ span.logo-colored {
  }
 
 .nav-element.current-page {
-    color: #f06c64;
+    color: var(--active-color);
 }
 
 a.nav-element {
@@ -174,7 +174,7 @@ a.nav-element {
 }
 
 a.nav-element:hover {
-    color: #f06c64;
+    color: var(--active-color);
 }
 
 
@@ -303,25 +303,28 @@ a.nav-element:hover {
     margin-top:45px;
     display: grid;
     grid-template-columns:repeat(3, 1fr);
-    grid-gap:13px 18px;
+    grid-gap:13px 20px;
 }
 
 
 .ico {
-    margin-left:1px;
+    margin-left:0px;
     margin-top:2px;
     width:55px;
     height:55px;
-    border:solid 2px #656d89;
+    border:solid 2px var(--portfolio-tag-border-color);
     border-radius:50%;
     display:inline-block;
     vertical-align: top;
+}
+.content-columg:nth-child(3n+1)>.ico{
+    margin-left:1px;
 }
 
 .column-text-wrapper {
     display:inline-block;
     margin-left:17px;
-    width: 219px;
+    width: 217px;
     height: 128px;
 }
 
@@ -333,7 +336,7 @@ a.nav-element:hover {
 .column-text {
     margin-top: 10px;
     letter-spacing: 0.0px;
-    line-height: 21px;
+    line-height: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -582,12 +585,15 @@ a.nav-element:hover {
     margin-top: 21px;
 }
 
+.about-us__element:nth-child(1)>.about-us_socials{margin-left:1px;}
+
 .socials-container {
     width:152px;
     height:32px;
     display: flex;
     justify-content: space-between;
 }
+
 
 .about-us-social-ico {
     box-sizing: border-box;
