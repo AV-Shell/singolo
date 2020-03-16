@@ -507,21 +507,21 @@ a.nav-element:hover {
     background:url("./assets/img/Portfolio/img12.jpg") no-repeat -36px -60px;
 }
 
-.preview-container_img13 {
-    background:url("./assets/img/Portfolio/img01.jpg") no-repeat -10px -10px;
-}
+.ord__1  {order: 1;}
+.ord__2  {order: 2;}
+.ord__3  {order: 3;}
+.ord__4  {order: 4;}
+.ord__5  {order: 5;}
+.ord__6  {order: 6;}
+.ord__7  {order: 7;}
+.ord__8  {order: 8;}
+.ord__9  {order: 9;}
+.ord__10 {order: 10;}
+.ord__11 {order: 11;}
+.ord__12 {order: 12;}
 
-.preview-container_img14 {
-    background:url("./assets/img/Portfolio/img01.jpg") no-repeat -10px -10px;
-}
 
-.preview-container_img15 {
-    background:url("./assets/img/Portfolio/img01.jpg") no-repeat -10px -10px;
-}
 
-.preview-container_img16 {
-    background:url("./assets/img/Portfolio/img01.jpg") no-repeat -10px -10px;
-}
 
 .about-us__body {
     background-color:var(--about-us-background-color);
