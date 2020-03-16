@@ -168,7 +168,7 @@ span.logo-colored {
     transform:scaleY(0.919);
  }
 
-.nav-element.current-page {
+.nav-selected {
     color: var(--active-color);
 }
 
