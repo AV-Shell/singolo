@@ -204,13 +204,29 @@ a.nav-element:hover {
     height: 594px;
 } 
 
-.slider-left {
-    padding: 0px 0px 5px 2px;
+
+.slider-right,
+.slider-left{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:47px;
+    height: 47px;
+    border-radius: 3px;
+    z-index:4;
 }
 
+.slider-left {
+    position: absolute;
+    top:271px;
+    left:27px;
+
+}
 .slider-right {
+    position: absolute;
+    top:271px;
+    left:949px;
     transform:scaleX(-1);
-    padding: 0px 2px 5px 0px;
 }
 
 .iphone-box {
@@ -220,13 +236,13 @@ a.nav-element:hover {
 .slider-left:hover,
 .slider-right:hover {
     cursor:pointer;
-    border-radius: 4px;
-    /* background: yellow; */
+    border-radius: 50%;
+    background: rgba(110, 15, 150, 0.17)
 }
  
 .iphone-wrapper {
     position: relative;
-    width: 820px ;
+    width: 1020px ;
     height: 594px; 
     position: relative;
 }
@@ -237,14 +253,16 @@ a.nav-element:hover {
     height: 484px;   
     position: absolute;
     top:53px;
-    left:12px;
+    left:112px;
 }
 
 .iphone-vertical .ipnohe-body {
-    width: inherit;
-    height: inherit; 
+    width: 215px;
+    height: 458px; 
     position: absolute;
     display:inline-block;
+    border:0px solid rgba(0,0,0,0);
+    border-radius: 27px;
     background:url("./assets/Base-iphone.png") no-repeat;
 }
 
@@ -271,17 +289,19 @@ a.nav-element:hover {
     height:484px;  
     position: absolute;
     top:52px;
-    left:447px;
+    left:547px;
     transform: rotate(90deg );
 }
 
 .iphone-horizontal .ipnohe-body {
-    transform: rotate(00deg );
-    width: inherit;
-    height: inherit; 
+    /* transform: rotate(00deg ); */
+    border-radius: 27px;
+    width: 215px;
+    height: 458px; 
+    top:26px;
     position: absolute;
     display:inline-block;
-    background:url("./assets/Base-iphone.png") no-repeat 0px 26px;
+    background:url("./assets/Base-iphone.png") no-repeat;
 }
 
 .iphone-horizontal .iphone-shadow {
@@ -290,7 +310,7 @@ a.nav-element:hover {
     display:inline-block;
     position: absolute;
     background:url("./assets/ShadowV.png") no-repeat 0px 1px;
-    transform: rotate(90deg );
+    /* transform: rotate(90deg ); */
     transform: scale(1,-1)
 }
 
@@ -302,6 +322,11 @@ a.nav-element:hover {
     left:14px;
     background:url("./assets/Layer5h.png") no-repeat -119px -122px;
 }
+
+.screen-off{
+    display: none!important;
+}
+
 
 .servises-head {
     padding: 0px 0px 0px 0px;
