@@ -6,7 +6,62 @@ NAVIGATION.addEventListener('click', (event) => {
         event.target.classList.add('nav-selected');
 
     }
-})
+});
+
+document.addEventListener('scroll', onScroll);
+
+
+function onScroll(event){
+    // console.log(event);
+    const current_postition = window.scrollY;
+    const links = NAVIGATION.querySelectorAll('a');
+    console.log(current_postition);
+    anch = document.querySelectorAll('.crutch_anchor')
+    for(let i=0; i< anch.length - 1; i++ ){
+        // debugger;
+
+        // console.log('offset elemens', i, anch[i].offsetTop)
+
+        
+        if (((anch[i].parentNode.offsetTop + anch[i].offsetTop)<= current_postition) && (anch[i+1].parentNode.offsetTop > current_postition)){
+            links.forEach(elem => {
+                
+                elem.classList.remove('nav-selected')
+                if (anch[i].getAttribute('id') === elem.getAttribute('href').substring(1)){
+                    elem.classList.add('nav-selected');
+                }
+                
+            });
+
+        }
+        if (current_postition == (document.documentElement.scrollHeight - document.documentElement.clientHeight)){
+            links.forEach(elem => {
+                
+                elem.classList.remove('nav-selected')
+                if (elem.getAttribute('href') === '#CONTACT'){
+                    elem.classList.add('nav-selected');
+                }
+                
+            });   
+        }
+
+    }
+    
+
+}
+
+
+
+
+const PORTFOLIO_CONTAINER  = document.getElementById('portfolio__gallery');
+// console.log(PORTFOLIO_CONTAINER);
+PORTFOLIO_CONTAINER.addEventListener('click', (event) =>{
+    if (event.target.classList.contains('portfolio__preview-container')){
+        PORTFOLIO_CONTAINER.querySelectorAll('.portfolio__preview-container').forEach(elem => elem.classList.remove('portfolio__gallery_selected'));
+        event.target.classList.add('portfolio__gallery_selected');
+    }
+});
+
 
 const mass_num = [  'ord__1',
                     'ord__2',
@@ -24,7 +79,7 @@ const mass_num = [  'ord__1',
 
 
 const TAGS_CONTAINER = document.getElementById('portfolio__tags-box');
-// console.log(TAGS_CONTAINER);
+console.log(TAGS_CONTAINER);
 TAGS_CONTAINER.addEventListener('click', (event) => {
     // console.log(event.target);
     if(event.target.classList.contains('portfolio__tag')){
@@ -42,6 +97,7 @@ TAGS_CONTAINER.addEventListener('click', (event) => {
 
     }
 })
+
 
 
 function shuffle(arr){

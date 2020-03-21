@@ -37,14 +37,16 @@
 
 }
 
-body {
-    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
-}
+
 
 * {margin:0px;padding:0px;}
-
+body {
+    font-family: 'Lato', Verdana, Arial, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
 html{
     font-size: 10px;
+    scroll-behavior: smooth;
 }
 
 .wrapper-all-ext {width:1020px;margin:0px auto;}
@@ -87,12 +89,25 @@ html{
     text-align: justify;
 }
 
+section{
+    position: relative;
+}
+.crutch_anchor {
+    position:absolute;
+    top:-89px;
+}
+
 .header_container {
     height: 89px;
     background-color: var(--header_color);
     border-bottom: 6px solid var(--header_border_color);
+    position: sticky;
+    top:0;
+    z-index: 10000000;
 }
-
+.header-rasporka{
+    height: 89px; 
+}
 .slider {
     height: 594px;
     background-color: var(--lososeviy_color);
@@ -443,6 +458,10 @@ a.nav-element:hover {
     color:var(--portfolio-selected-tag-color);
     border-color:var(--portfolio-selected-tag-border-color);
  } 
+
+ .portfolio__gallery_selected{
+    box-shadow: inset 0px 0px 0 5px #f06c64;
+ }
 
  .portfolio__gallery {
      margin-top: 5px;
