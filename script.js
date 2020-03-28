@@ -35,6 +35,14 @@ function onScroll(event) {
             });
         }
     }
+    if ((anch[anch.length - 1].parentNode.offsetTop + anch[anch.length - 1].offsetTop) <= current_postition)  {
+        links.forEach(elem => {
+            elem.classList.remove('nav-selected')
+            if (anch[anch.length - 1].getAttribute('id') === elem.getAttribute('href').substring(1)) {
+                elem.classList.add('nav-selected');
+            }
+        });
+    }
 }
 
 
@@ -78,19 +86,19 @@ PORTFOLIO_CONTAINER.addEventListener('click', (event) => {
 });
 
 
-const mass_num = ['ord__1',
-    'ord__2',
-    'ord__3',
-    'ord__4',
-    'ord__5',
-    'ord__6',
-    'ord__7',
-    'ord__8',
-    'ord__9',
-    'ord__10',
-    'ord__11',
-    'ord__12',];
 
+
+const portfolio_tags = document.querySelectorAll('.portfolio__preview-container');
+const num_len = portfolio_tags.length;
+const mass_num2 =[num_len];
+for(let i = 0; i<num_len; i++){
+    mass_num2[i] = portfolio_tags[i].cloneNode(true);
+}
+const mass_parent =  document.querySelector('.portfolio__preview-container').parentElement;
+mass_parent.innerHTML = '';
+for(let i = 0; i<num_len; i++){
+    mass_parent.append(mass_num2[i]);
+}
 
 
 const TAGS_CONTAINER = document.getElementById('portfolio__tags-box');
@@ -100,16 +108,20 @@ TAGS_CONTAINER.addEventListener('click', (event) => {
     if (event.target.classList.contains('portfolio__tag')) {
         TAGS_CONTAINER.querySelectorAll('.portfolio__tag').forEach(elem => elem.classList.remove('tag_selected'));
         event.target.classList.add('tag_selected');
-        shuffle(mass_num);
-        // console.log(document.querySelectorAll('.portfolio__preview-container'));
-        document.querySelectorAll('.portfolio__preview-container').forEach((elem, index) => {
-            // console.log(elem,index);
-            mass_num.forEach(class_ord => {
-                elem.classList.remove(class_ord);
-            });
-            elem.classList.add(mass_num[index]);
-        })
-
+        // shuffle(mass_num);
+        // // console.log(document.querySelectorAll('.portfolio__preview-container'));
+        // document.querySelectorAll('.portfolio__preview-container').forEach((elem, index) => {
+        //     // console.log(elem,index);
+        //     mass_num.forEach(class_ord => {
+        //         elem.classList.remove(class_ord);
+        //     });
+        //     elem.classList.add(mass_num[index]);
+        // });
+        shuffle(mass_num2);
+        mass_parent.innerHTML = '';
+        for(let i = 0; i<num_len; i++){
+            mass_parent.append(mass_num2[i]);
+        }
     }
 })
 
@@ -125,3 +137,86 @@ function shuffle(arr) {
     }
     return arr;
 }
+
+
+const BUTTON =          document.getElementById('submit_button');
+const CLOSE_BUTTON =    document.getElementById('close_button');
+
+const MYFORM =          document.getElementById('my_lovely_form')
+
+// BUTTON.addEventListener('click', (event) =>{
+//     const subject = document.getElementById('subject').value.toString();
+//     document.getElementById('result').innerText = subject;
+//     document.getElementById('message_block').classList.remove('hidden_message');
+// });
+
+MYFORM.addEventListener('submit', (event) =>{
+    // event.stopPropagation();
+    event.preventDefault();
+    document.body.classList.add('cut_document');
+    const subject = document.getElementById('subject').value.toString();
+    const description = document.getElementById('describe-detail').value.toString();
+    document.getElementById('sb_result').innerText = subject == '' ? 'No subject' : `Subject: ${subject}`; 
+    document.getElementById('dscr_result').innerText = description == '' ? 'No description' : `Description: ${description}`;
+    document.getElementById('message_block').classList.remove('hidden_message');
+}); 
+
+
+
+
+CLOSE_BUTTON.addEventListener('click', (event) =>{
+    document.body.classList.remove('cut_document');
+    document.getElementById('message_block').classList.add('hidden_message');
+});
+
+
+let slides = document.querySelectorAll('.iphones-box');
+let current_slide = 0;
+let flag_is_enabled = true;
+
+function hideSlide(direction){
+    flag_is_enabled = false;
+    slides[current_slide].classList.add(direction);
+    slides[current_slide].addEventListener('animationend', function () {
+        this.classList.remove('slide_active', direction);
+    });
+}
+function showSlide(direction){
+    slides[current_slide].classList.add('slide_next', direction);
+    slides[current_slide].addEventListener('animationend', function () {
+        this.classList.remove('slide_next', direction);
+        this.classList.add('slide_active');
+        flag_is_enabled = true;
+    });
+}
+
+
+
+function changeCurrentSlide(n){
+ current_slide = (n + slides.length)% slides.length;
+}
+function previousSlide(n) {
+    hideSlide('to-right');
+    changeCurrentSlide(n - 1); 
+    showSlide('from-left')
+}
+function nextSlide(n) {
+    hideSlide('to-left');
+    changeCurrentSlide(n + 1);
+    showSlide('from-right');
+}
+
+document.querySelector('.slider-left').addEventListener('click', function() {
+    if(flag_is_enabled){
+        previousSlide(current_slide);
+
+    }
+});
+
+
+document.querySelector('.slider-right').addEventListener('click', function() {
+    if(flag_is_enabled){
+        nextSlide(current_slide);
+
+    }
+});

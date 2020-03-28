@@ -33,27 +33,27 @@
         </div>
         <!-- <div class="header-rasporka" id="HOME"></div> -->
         <section class="slider">
-            <div class="wrapper-all-int">
-                <ul class="slider-box">
-                    <li class="slider-left"><img class="slide-button button-left" src="./assets/chev.png" alt="left">
-                    </li>
-                    <li class="slider-right"><img class="slide-button button-right" src="./assets/chev.png" alt="right">
-                    </li>
-                    <li class="iphones-box">
-                        <div class="iphone-wrapper">
-                            <div class="iphone-vertical">
-                                <div class="iphone-shadow"></div>
-                                <div class="ipnohe-body"></div>
-                                <div class="iphone-screen"></div>
-                            </div>
-                            <div class="iphone-horizontal">
-                                <div class="iphone-shadow"></div>
-                                <div class="ipnohe-body"></div>
-                                <div class="iphone-screen"></div>
-                            </div>
+            <div class="slider-left"><img class="slide-button button-left" src="./assets/chev.png" alt="left">
+            </div>
+            <div class="slider-right"><img class="slide-button button-right" src="./assets/chev.png" alt="right">
+            </div>
+            <div class="slider-box">
+                <div class="iphones-box slide_active slide1">
+                    <div class="iphone-wrapper">
+                        <div class="iphone-vertical">
+                            <div class="iphone-shadow"></div>
+                            <div class="ipnohe-body"></div>
+                            <div class="iphone-screen"></div>
                         </div>
-                    </li>
-                </ul>
+                        <div class="iphone-horizontal">
+                            <div class="iphone-shadow"></div>
+                            <div class="ipnohe-body"></div>
+                            <div class="iphone-screen"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="iphones-box slide2">
+                </div>
             </div>
         </section>
         <section class="services">
@@ -225,17 +225,38 @@
                         </p>
                     </div>
                     <div class="get-a-quote__main">
-                        <form class="get-a-quote__form " action="index.html" method="POST">
+                        <form class="get-a-quote__form " action="index.html" method="POST" id="my_lovely_form">
                             <input type="text" class="get-a-quote__input input1 form-text" required autocomplete="off"
                                 placeholder="Name (Required)">
                             <input type="email" class="get-a-quote__input input1 form-text" required autocomplete="off"
                                 placeholder="Email (Required)">
                             <input type="text" class="get-a-quote__input input1 form-text" autocomplete="off"
-                                placeholder="Subject">
+                                placeholder="Subject" id="subject">
                             <textarea name="describe-detail" id="describe-detail" cols="30" rows="10"
                                 class="get-a-quote__textarea form-text" autocomplete="off"
                                 placeholder="Describe your project in detail..."></textarea>
-                            <button class="get-a-quote__submit-button " type="submit">Submit</button>
+                            <button class="get-a-quote__submit-button" type="submit" id="submit_button">Submit</button>
+
+                            <div id="message_block" class="message_block hidden_message">
+                                <div id="message" class="message_block_container">
+                                    <h2> The letter was sent</h2>
+                                    <hr>
+                                    <div class="message_block_inner_container">
+                                        <p id=sb_result> sdfsdfsf s</p>
+                                        <hr>
+                                        <p id=dscr_result>sdfasd fsadf sadf sadf sjadlksaldfj laskdfjsaldfkj saldfk
+                                            jsadlf ksjadfl askdjf lskadfj lsakdf jasdlf jasdlf jsadlfk sjadlf ksjadfl
+                                            ksdfj alsdkjsaldkf jsadlfk jsadf lksdjaf lksdfj lsakdjsdalf jsadlf jsadfl
+                                            ksadf lsakdf saldfkj sdsdfasd fsadf sadf sadf sjadlksaldfj laskdfjsaldfkj
+                                            saldfk
+                                            jsadlf ksjadfl askdjf lskadfj lsakdf jasdlf jasdlf jsadlfk sjadlf ksjadfl
+                                            ksdfj alsdkjsaldkf jsadlfk jsadf lksdjaf lksdfj lsakdjsdalf jsadlf jsadfl
+                                            ksadf lsakdf saldfkj sd</p>
+                                    </div>
+                                    <button id="close_button" type="reset">OK</button>
+                                </div>
+                            </div>
+
                         </form>
                         <div class="get-a-quote__contacts-information">
 
@@ -277,6 +298,8 @@
             </div>
         </footer>
     </div>
+
+
     <script src="script.js"></script>
 </body>
 
