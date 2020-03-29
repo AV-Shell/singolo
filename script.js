@@ -4,7 +4,7 @@ NAVIGATION.addEventListener('click', (event) => {
     if ((event.target.classList.contains('nav-element')) || ((event.target.classList.contains('nav-element')))) {
         NAVIGATION.querySelectorAll('a').forEach(elem => elem.classList.remove('nav-selected'));
         event.target.classList.add('nav-selected');
-
+        hide_burger();
     }
 });
 
@@ -79,9 +79,9 @@ IPHONE_HORISONTAL.addEventListener('click', (event) => {
 const PORTFOLIO_CONTAINER = document.getElementById('portfolio__gallery');
 // console.log(PORTFOLIO_CONTAINER);
 PORTFOLIO_CONTAINER.addEventListener('click', (event) => {
-    if (event.target.classList.contains('portfolio__preview-container')) {
+    if (event.target.classList.contains('portfolio__image')) {
         PORTFOLIO_CONTAINER.querySelectorAll('.portfolio__preview-container').forEach(elem => elem.classList.remove('portfolio__gallery_selected'));
-        event.target.classList.add('portfolio__gallery_selected');
+        event.target.parentElement.classList.add('portfolio__gallery_selected');
     }
 });
 
@@ -218,5 +218,40 @@ document.querySelector('.slider-right').addEventListener('click', function() {
     if(flag_is_enabled){
         nextSlide(current_slide);
 
+    }
+});
+
+
+// real_beef_tasty
+let flag_show_burger = false;
+let burger_class_container =[];
+burger_class_container[0] = document.querySelector('.header-wrapper');
+burger_class_container[1] = document.querySelector('.header');
+burger_class_container[2] = document.querySelector('.burger_beef_tasty');
+burger_class_container[3] = document.querySelector('.header-navigation');
+
+function show_burger(){
+for(let i = 0; i<burger_class_container.length;i++){
+    burger_class_container[i].classList.add('eating_bureg');
+}
+document.body.classList.add('cut_document');
+flag_show_burger = true;
+}
+
+function hide_burger(){
+    for(let i = 0; i<burger_class_container.length;i++){
+        burger_class_container[i].classList.remove('eating_bureg');
+    }
+    document.body.classList.remove('cut_document');
+    flag_show_burger = false;
+}
+
+const BURGER = document.getElementById('real_beef_tasty');
+// console.log(PORTFOLIO_CONTAINER);
+BURGER.addEventListener('click', (event) => {
+    if(flag_show_burger){
+        hide_burger();
+    }else{
+        show_burger();
     }
 });
